@@ -24,4 +24,4 @@ RUN pip install -r /app/requirements.txt
 ADD *.py /app/
 
 EXPOSE 8888
-CMD gunicorn -b :8888 --threads 2 --log-level=DEBUG "searchservice:create_app()"
+CMD gunicorn -b :8080 --threads 2 --log-level=DEBUG "searchservice:create_app()"
