@@ -1,0 +1,13 @@
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGatewayRouteConfig
+metadata:
+  name: products-gateway-route
+spec:
+  service:
+    name: products
+  routes:
+  - predicates:
+      - Path=/products/**
+    filters:
+      - StripPrefix=1
+    uri: http://products-default.gkelabeast.tap.fynesy.com

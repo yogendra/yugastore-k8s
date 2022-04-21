@@ -1,0 +1,13 @@
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGatewayRouteConfig
+metadata:
+  name: cart-gateway-route
+spec:
+  service:
+    name: cart
+  routes:
+  - predicates:
+      - Path=/cart/**
+    filters:
+      - StripPrefix=1
+    uri: http://cart-default.gkelabeast.tap.fynesy.com

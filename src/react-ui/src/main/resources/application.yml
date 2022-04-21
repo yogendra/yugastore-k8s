@@ -1,6 +1,7 @@
 cronos:
   yugabyte:
-    api: http://localhost:8081/api/v1/
+    #api: http://localhost:8081/api/v1/
+    api: http://api-gateway-default.gkelabeast.tap.fynesy.com/api/v1/
 
 server:
   port: 8080

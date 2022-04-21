@@ -1,0 +1,13 @@
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: yugastore-gateway
+  namespace: default
+spec:
+  routes:
+  - services:
+    - name: yugastore-gateway-0
+      port: 80
+  virtualhost:
+    #fqdn: api-portal.tap.homelab.fynesy.com
+    fqdn: yugastore.gkelabeast.tap.fynesy.com

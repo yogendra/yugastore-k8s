@@ -1,0 +1,13 @@
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGatewayRouteConfig
+metadata:
+  name: checkout-gateway-route
+spec:
+  service:
+    name: checkout
+  routes:
+  - predicates:
+      - Path=/checkout/**
+    filters:
+      - StripPrefix=1
+    uri: http://checkout-default.gkelabeast.tap.fynesy.com
