@@ -1,3 +1,3 @@
-staticfile:
-  nginx:
-    pushstate: true
+#staticfile:
+#  nginx:
+#    pushstate: true
