@@ -28,7 +28,6 @@
       "ws": true
     }
   },
-  },
   "engines": {
     "node": "^12"
   }
