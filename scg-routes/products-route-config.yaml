@@ -10,4 +10,5 @@ spec:
       - Path=/products/**
     filters:
       - StripPrefix=1
+      - PrefixPath=/products-microservice/products
     uri: http://products-default.gkelabeast.tap.fynesy.com

@@ -10,4 +10,5 @@ spec:
       - Path=/cart/**
     filters:
       - StripPrefix=1
+      - PrefixPath=/cart-microservice
     uri: http://cart-default.gkelabeast.tap.fynesy.com
