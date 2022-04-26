@@ -44,7 +44,8 @@ class CartProducts extends Component {
   fetchProductDetails(product_id) {
     if (!this.state.products.product_id) {
       this.state.product_id = "" + product_id;
-      var url = '/products/details?sku=' + product_id;
+      //var url = '/products/details?sku=' + product_id;
+      var url = '/products/details/sku/' + product_id;
       console.log("Fetching url: " + url);
       fetch(url)
         .then(res => res.json())

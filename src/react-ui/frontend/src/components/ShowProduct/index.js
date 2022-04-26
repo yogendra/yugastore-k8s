@@ -20,7 +20,8 @@ class ShowProduct extends Component {
         this.state.product_id != undefined &&
         new_product_id != this.state.product_id) {
       this.state.product_id = "" + new_product_id;
-      var url = '/products/details?sku=' + new_product_id;
+      //var url = '/products/details?sku=' + new_product_id;
+      var url = '/products/details/sku/' + new_product_id;
       console.log("Fetching url: " + url);
       fetch(url)
         .then(res => res.json())
@@ -34,7 +35,8 @@ class ShowProduct extends Component {
 
   fetchProductAlsoBought = (productList) => {
     productList.forEach(element => {
-      let url = '/products/details?sku=' + element;
+      //let url = '/products/details?sku=' + element;
+      let url = '/products/details/sku/' + element;
       fetch(url,{
           headers: {
             'Accept': 'application/json',
