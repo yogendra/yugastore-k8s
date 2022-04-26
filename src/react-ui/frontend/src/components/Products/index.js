@@ -62,7 +62,8 @@ class Products extends Component {
                     // fetch each product detail
                     let promises = [];
                     for (const element of json) {
-                        promises.push(fetch('/products/details?sku=' + element.sku, {mode: 'cors'}) // XXX need cors here?
+                        //promises.push(fetch('/products/details?sku=' + element.sku, {mode: 'cors'}) // XXX need cors here?
+                        promises.push(fetch('/products/details/sku=' + element.sku, {mode: 'cors'}) // XXX need cors here?
                             .then(res => res.json()) );
                     }
                     Promise.all(promises)

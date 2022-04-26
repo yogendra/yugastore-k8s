@@ -8,6 +8,7 @@ spec:
   routes:
   - predicates:
       - Path=/cart/**
+    order: 0 
     filters:
       - StripPrefix=1
       - PrefixPath=/cart-microservice
