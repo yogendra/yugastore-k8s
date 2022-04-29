@@ -17,7 +17,8 @@ public class ShoppingCartController {
 	@Autowired
 	ShoppingCartImpl shoppingCart;
 	
-	@RequestMapping(method = RequestMethod.GET, value = "/shoppingCart/addProduct", produces = "application/json")
+	//@RequestMapping(method = RequestMethod.GET, value = "/shoppingCart/addProduct", produces = "application/json")
+	@RequestMapping(method = RequestMethod.POST, value = "/shoppingCart/addProduct", produces = "application/json")
 	public String addProductToCart(@RequestParam("userid") String userId, 
 			@RequestParam("sku") String sku) {
 		shoppingCart.addProductToShoppingCart(userId, sku);
