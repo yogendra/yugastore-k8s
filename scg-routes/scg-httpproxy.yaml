@@ -6,8 +6,9 @@ metadata:
 spec:
   routes:
   - services:
-    - name: yugastore-gateway-0
+    - name: yugastore-gateway
       port: 80
   virtualhost:
-    #fqdn: api-portal.tap.homelab.fynesy.com
     fqdn: yugastore.gkelabeast.tap.fynesy.com
+    #fqdn: yugastore.gkelabwest.tap.fynesy.com
+    #fqdn: yugastore.gkelabcentral.tap.fynesy.com
