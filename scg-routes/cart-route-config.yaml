@@ -14,6 +14,15 @@ spec:
       - PrefixPath=/cart-microservice/shoppingCart/addProduct
       - AddRequestParam=userid,1
     uri: http://cart-default.gkelabeast.tap.fynesy.com
+  
+  - predicates:
+      - Path=/cart/get/**
+    order: 0
+    filters:
+      - StripPrefix=2
+      - PrefixPath=/cart-microservice/shoppingCart/productsInCart
+      - AddRequestParam=userid,1
+    uri: http://cart-default.gkelabeast.tap.fynesy.com
 
   - predicates:
       - Path=/cart/**

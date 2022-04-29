@@ -58,7 +58,8 @@ export default class App extends Component {
     const self = this;
     var url = '/cart/get';
     fetch(url, {
-      method: "POST",
+      method: "GET",
+      //method: "POST",
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
