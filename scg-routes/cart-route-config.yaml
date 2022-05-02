@@ -7,27 +7,29 @@ spec:
     name: cart
   routes:
   - predicates:
-      - Path=/cart/add/**
+      - Path=/cart/get/**
+    order: 9
+    filters:
+      - StripPrefix=1
+      - PrefixPath=/cart-microservice/shoppingCart/productsInCart
+      - AddRequestParameter=userid,u1001
+    uri: http://cart-default.gkelabeast.tap.fynesy.com
+
+  - predicates:
+      - Path=/cart/add
     order: 0
     filters:
       - StripPrefix=2
       - PrefixPath=/cart-microservice/shoppingCart/addProduct
-      - AddRequestParam=userid,1
+      - AddRequestParameter=userid,u1001
     uri: http://cart-default.gkelabeast.tap.fynesy.com
   
   - predicates:
-      - Path=/cart/get/**
-    order: 0
+      - Path=/cart/get
+    order: 1
     filters:
       - StripPrefix=2
       - PrefixPath=/cart-microservice/shoppingCart/productsInCart
-      - AddRequestParam=userid,1
+      - AddRequestParameter=userid,1
     uri: http://cart-default.gkelabeast.tap.fynesy.com
 
-  - predicates:
-      - Path=/cart/**
-    order: 1 
-    filters:
-      - StripPrefix=1
-      - PrefixPath=/cart-microservice
-    uri: http://cart-default.gkelabeast.tap.fynesy.com
