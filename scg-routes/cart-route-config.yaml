@@ -25,10 +25,10 @@ spec:
     uri: http://cart-default.gkelabeast.tap.fynesy.com
 
   - predicates:
-      - Path=/cart/remove/sku
+      - Path=/cart/remove
     order: 0
     filters:
-      - StripPrefix=3
+      - StripPrefix=2
       - PrefixPath=/cart-microservice/shoppingCart/removeProduct
       - AddRequestParameter=userid,u1001
     uri: http://cart-default.gkelabeast.tap.fynesy.com
