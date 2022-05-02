@@ -24,11 +24,11 @@ spec:
       - AddRequestParameter=userid,u1001
     uri: http://cart-default.gkelabeast.tap.fynesy.com
 
-    - predicates:
-      - Path=/cart/remove
+  - predicates:
+      - Path=/cart/remove/sku
     order: 0
     filters:
-      - StripPrefix=2
+      - StripPrefix=3
       - PrefixPath=/cart-microservice/shoppingCart/removeProduct
       - AddRequestParameter=userid,u1001
     uri: http://cart-default.gkelabeast.tap.fynesy.com
