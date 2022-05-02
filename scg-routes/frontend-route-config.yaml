@@ -1,0 +1,16 @@
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGatewayRouteConfig
+metadata:
+  name: frontend-gateway-route
+spec:
+  service:
+    name: frontend
+  routes:
+  - order: 10
+    predicates:
+      - Path=/**
+    filters:
+      - StripPrefix=0
+    uri: http://frontend-default.gkelabeast.tap.fynesy.com
+    #uri: http://frontend-default.gkelabwest.tap.fynesy.com
+    #uri: http://frontend-default.gkelabcentral.tap.fynesy.com
