@@ -31,7 +31,7 @@ public class ShoppingCartController {
 	}
 	
 	//@RequestMapping(method = RequestMethod.GET, value = "/shoppingCart/removeProduct", produces = "application/json")
-	@RequestMapping(method = RequestMethod.GET, value = "/shoppingCart/removeProduct", produces = "application/json")
+	@RequestMapping(method = RequestMethod.POST, value = "/shoppingCart/removeProduct", produces = "application/json")
 	public String removeProductFromCart(@RequestParam("userid") String userId, 
 			@RequestParam("sku") String sku) {
 		shoppingCart.removeProductFromCart(userId, sku);

@@ -39,6 +39,6 @@ spec:
     filters:
       - StripPrefix=2
       - PrefixPath=/cart-microservice/shoppingCart/productsInCart
-      - AddRequestParameter=userid,1
+      - AddRequestParameter=userid,u1001
     uri: http://cart-default.gkelabeast.tap.fynesy.com
 
