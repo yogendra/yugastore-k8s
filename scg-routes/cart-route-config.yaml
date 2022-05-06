@@ -13,7 +13,8 @@ spec:
       - StripPrefix=1
       - PrefixPath=/cart-microservice/shoppingCart/productsInCart
       - AddRequestParameter=userid,u1001
-    uri: http://cart-default.gkelabeast.tap.fynesy.com
+      - AddRequestHeader=Host,cart
+    #uri: http://cart-default.gkelabeast.tap.fynesy.com
 
   - predicates:
       - Path=/cart/add
@@ -22,7 +23,8 @@ spec:
       - StripPrefix=2
       - PrefixPath=/cart-microservice/shoppingCart/addProduct
       - AddRequestParameter=userid,u1001
-    uri: http://cart-default.gkelabeast.tap.fynesy.com
+      - AddRequestHeader=Host,cart
+    #uri: http://cart-default.gkelabeast.tap.fynesy.com
 
   - predicates:
       - Path=/cart/remove
@@ -31,7 +33,8 @@ spec:
       - StripPrefix=2
       - PrefixPath=/cart-microservice/shoppingCart/removeProduct
       - AddRequestParameter=userid,u1001
-    uri: http://cart-default.gkelabeast.tap.fynesy.com
+      - AddRequestHeader=Host,cart
+    #uri: http://cart-default.gkelabeast.tap.fynesy.com
   
   - predicates:
       - Path=/cart/get
@@ -40,5 +43,6 @@ spec:
       - StripPrefix=2
       - PrefixPath=/cart-microservice/shoppingCart/productsInCart
       - AddRequestParameter=userid,u1001
-    uri: http://cart-default.gkelabeast.tap.fynesy.com
+      - AddRequestHeader=Host,cart
+    #uri: http://cart-default.gkelabeast.tap.fynesy.com
 
