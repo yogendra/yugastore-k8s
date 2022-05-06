@@ -4,6 +4,7 @@ metadata:
   name: yugastore-gitops-deployer
   namespace: default
 spec:
+  serviceAccountName: gitops-service-account
   fetch:
   - git:
       url: https://github.com/tfynes-pivotal/yugastore-k8s
