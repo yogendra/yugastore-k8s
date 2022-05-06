@@ -11,6 +11,7 @@ spec:
       - Path=/**
     filters:
       - StripPrefix=0
-    uri: http://frontend-default.gkelabeast.tap.fynesy.com
+      - AddRequestHeader=Host,frontend
+    #uri: http://frontend-default.gkelabeast.tap.fynesy.com
     #uri: http://frontend-default.gkelabwest.tap.fynesy.com
     #uri: http://frontend-default.gkelabcentral.tap.fynesy.com
