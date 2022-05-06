@@ -1,7 +1,7 @@
 apiVersion: kappctrl.k14s.io/v1alpha1
 kind: App
 metadata:
-  name: yugastore-gitops-deployer
+  name: yugastore-gitops-workload-deployer
   namespace: default
 spec:
   serviceAccountName: gitops-service-account
@@ -19,7 +19,7 @@ spec:
 apiVersion: kappctrl.k14s.io/v1alpha1
 kind: App
 metadata:
-  name: yugastore-gitops-deployer
+  name: yugastore-gitops-routes-deployer
   namespace: default
 spec:
   serviceAccountName: gitops-service-account
