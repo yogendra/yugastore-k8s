@@ -10,33 +10,15 @@ metadata:
   name: frontend
 spec:
   env:
-  - name: NODE_ENV
-    value: production
-  - name: "DANGEROUSLY_DISABLE_HOST_CHECK"
-    value: true
   - name: "EUREKA_URI"
-    #value: "http://eureka-default.tap.yuga.ga/eureka"
-    #value: "http://eureka-default.gkelabwest.tap.fynesy.com/eureka"
-    value: "http://eureka-default.gkelabcentral.tap.fynesy.com/eureka"
+    value: "http://eureka-default.tap.yuga.ga/eureka"
   - name: "DB_HOSTNAME"
-    #value: "54.241.66.118"
-    #value: "yb-tservers.yb-demo-us-west1-b.svc.cluster.local"
-    value: "yb-tservers.yb-demo-us-central1-b.svc.cluster.local"
+    value: "54.241.66.118"
   - name: "spring.datasource.url"
-    #value: "jdbc:postgresql://54.241.66.118:5433/yugabyte"
-    #value: "jdbc:postgresql://yb-tservers.yb-demo-us-west1-b.svc.cluster.local:5433/yugabyte"
-    value: "jdbc:postgresql://yb-tservers.yb-demo-us-central1-b.svc.cluster.local:5433/yugabyte"
-  build:
-    env:
-    - name: BP_NODE_RUN_SCRIPTS
-      value: build
-    - name: NODE_ENV
-      value: production
-    - name: "eqeqeq"
-      value: "false"
+    value: "jdbc:postgresql://54.241.66.118:5433/yugabyte"
   source:
     git:
       ref:
         branch: master
       url: https://github.com/yogendra/yugastore-k8s
-    subPath: "src/react-ui/frontend"
+    subPath: "src/react-ui"
