@@ -9,25 +9,29 @@ metadata:
     app.kubernetes.io/part-of: yugastore
   name: frontend
 spec:
+  params:
+    - name: clusterBuilder
+      value: full
+
   env:
-  - name: DANGEROUSLY_DISABLE_HOST_CHECK
-    value: true
-  - name: "EUREKA_URI"
-    value: "http://eureka-default.tap.yuga.ga/eureka"
-  - name: "DB_HOSTNAME"
-    value: "54.241.66.118"
-  - name: "spring.datasource.url"
-    value: "jdbc:postgresql://54.241.66.118:5433/yugabyte"
+  # - name: DANGEROUSLY_DISABLE_HOST_CHECK
+  #   value: true
+  # - name: "EUREKA_URI"
+  #   value: "http://eureka-default.tap.yuga.ga/eureka"
+  # - name: "DB_HOSTNAME"
+  #   value: "54.241.66.118"
+  # - name: "spring.datasource.url"
+  #   value: "jdbc:postgresql://54.241.66.118:5433/yugabyte"
   build:
     env:
     - name: BP_WEB_SERVER
       value: nginx
-    - name: BP_NODE_RUN_SCRIPTS"
+    - name: BP_NODE_RUN_SCRIPTS
       value: build
     - name: BP_WEB_SERVER_ROOT
       value: build
-    - name: BP_WEB_SERVER_ENABLE_PUSH_STATE
-      value: true
+    # - name: BP_WEB_SERVER_ENABLE_PUSH_STATE
+    #   value: true
   source:
     git:
       ref:
