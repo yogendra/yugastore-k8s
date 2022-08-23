@@ -22,8 +22,8 @@ class CartProducts extends Component {
 
   submitCheckout() {
     if (this.props.cart.total !== 0) {
-      var url = '/cart/checkout';
-      fetch(url, {  
+      var url = '/checkout';
+      fetch(url, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -49,7 +49,7 @@ class CartProducts extends Component {
       console.log("Fetching url: " + url);
       fetch(url)
         .then(res => res.json())
-        .then(product => this.setState({ 
+        .then(product => this.setState({
           products: this.state.products.concat([product])
         })
       );
@@ -71,7 +71,7 @@ class CartProducts extends Component {
                 <div className="details">
                   <Link to={`/item/${product.id.sku || product.id}`}>{product.title}</Link>
                 </div>
-    
+
                 <div className="pricing">
                   <h6>${product.price.toFixed(2)}</h6> x {this.props.cart.data[product.id]}
                 </div>
@@ -87,7 +87,7 @@ class CartProducts extends Component {
         { Boolean(this.state.isCompleted) && this.state.result &&
           <div className="order-details">{this.state.result.orderDetails}</div>
         }
-        { Boolean(this.props.cart.total) && 
+        { Boolean(this.props.cart.total) &&
             <div className="total">
               <div className="details">
               </div>
