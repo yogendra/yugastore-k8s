@@ -13,8 +13,6 @@ spec:
       - StripPrefix=1
       - PrefixPath=/products-microservice/products
     uri: http://products-default.tap.yuga.ga
-    #uri: http://products-default.gkelabwest.tap.fynesy.com
-    #uri: http://products-default.gkelabcentral.tap.fynesy.com
   - predicates:
       - Path=/products/details/sku/**
     order: 0
