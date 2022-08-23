@@ -9,5 +9,6 @@ spec:
   - predicates:
       - Path=/checkout/**
     filters:
-      - StripPrefix=1
+      - StripPrefix=3
+      - PrefixPath=/checkout-microservice/shoppingCart/checkout
     uri: http://checkout-default.tap.yuga.ga
