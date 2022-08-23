@@ -10,6 +10,8 @@ metadata:
   name: frontend
 spec:
   env:
+  - name: "DANGEROUSLY_DISABLE_HOST_CHECK"
+    value: true
   - name: "EUREKA_URI"
     #value: "http://eureka-default.tap.yuga.ga/eureka"
     #value: "http://eureka-default.gkelabwest.tap.fynesy.com/eureka"
