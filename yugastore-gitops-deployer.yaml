@@ -1,0 +1,34 @@
+apiVersion: kappctrl.k14s.io/v1alpha1
+kind: App
+metadata:
+  name: yugastore-gitops-workload-deployer
+  namespace: default
+spec:
+  serviceAccountName: gitops-service-account
+  fetch:
+  - git:
+      url: https://github.com/tfynes-pivotal/yugastore-k8s
+      ref: origin/master
+      subPath: workloads
+  template:
+  - ytt: {}
+  deploy: 
+  - kapp: {}
+
+---
+apiVersion: kappctrl.k14s.io/v1alpha1
+kind: App
+metadata:
+  name: yugastore-gitops-routes-deployer
+  namespace: default
+spec:
+  serviceAccountName: gitops-service-account
+  fetch:
+  - git:
+      url: https://github.com/tfynes-pivotal/yugastore-k8s
+      ref: origin/master
+      subPath: scg-routes
+  template:
+  - ytt: {}
+  deploy: 
+  - kapp: {}

@@ -1,0 +1,9 @@
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGatewayMapping
+metadata:
+  name: checkout-gateway-mapping
+spec:
+  gatewayRef:
+    name: yugastore-gateway
+  routeConfigRef:
+    name: checkout-gateway-route

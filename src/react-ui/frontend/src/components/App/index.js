@@ -58,7 +58,8 @@ export default class App extends Component {
     const self = this;
     var url = '/cart/get';
     fetch(url, {
-      method: "POST",
+      method: "GET",
+      //method: "POST",
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
@@ -129,7 +130,7 @@ export default class App extends Component {
       console.log("Removed from Cart "+product.title);
       
       const self = this;
-      const url = '/cart/remove/?sku='+product.id;
+      const url = '/cart/remove?sku='+product.id;
       let requestData = new FormData();
       requestData.append( "json", JSON.stringify( {sku: product.id} ));
 

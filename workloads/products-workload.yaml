@@ -1,0 +1,40 @@
+---
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  annotations:
+    autoscaling.knative.dev/minScale: "1"
+  labels:
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/part-of: yugastore
+  name: products
+spec:
+#  serviceClaims:
+#  - name: db
+#    ref:
+#      apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+#      kind: ResourceClaim
+#      name: east-yb-db
+  env:
+  - name: "EUREKA_URI"
+    value: "http://eureka-default.gkelabeast.tap.fynesy.com/eureka"
+    #value: "http://eureka-default.gkelabwest.tap.fynesy.com/eureka"
+    #value: "http://eureka-default.gkelabcentral.tap.fynesy.com/eureka"
+  - name: "DB_HOSTNAME"
+    value: "yb-tservers.yb-demo-us-east1-b.svc.cluster.local"
+    #value: "yb-tservers.yb-demo-us-west1-b.svc.cluster.local"
+    #value: "yb-tservers.yb-demo-us-central1-b.svc.cluster.local"
+  - name: "spring.datasource.url"
+    value: "jdbc:postgresql://yb-tservers.yb-demo-us-east1-b.svc.cluster.local:5433/yugabyte"
+    #value: "jdbc:postgresql://yb-tservers.yb-demo-us-west1-b.svc.cluster.local:5433/yugabyte"
+    #value: "jdbc:postgresql://yb-tservers.yb-demo-us-central1-b.svc.cluster.local:5433/yugabyte"
+  build: 
+    env: 
+    - name: BP_JVM_VERSION
+      value: "17"
+  source:
+    git:
+      ref:
+        branch: master
+      url: https://github.com/tfynes-pivotal/yugastore-k8s
+    subPath: "src/products"

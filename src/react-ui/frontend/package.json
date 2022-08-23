@@ -27,5 +27,8 @@
       "target": "http://localhost:8081",
       "ws": true
     }
+  },
+  "engines": {
+    "node": "^12"
   }
 }

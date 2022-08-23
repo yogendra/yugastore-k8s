@@ -33,7 +33,7 @@ server:
 
 logging:
   level:
-    root: info
+    root: debug
     org.springframework.wen: info
     org.hibernate.SQL: debug
     org.hibernate.type: trace

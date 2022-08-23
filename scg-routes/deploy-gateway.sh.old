@@ -1,0 +1,4 @@
+#!/bin/bash
+kubectl apply -f ./gateway-config.yaml
+kubectl apply -f ./mapping.yaml
+#echo "Observe openapi documentation for exposed APIs here; http://$(kubectl -n spring-cloud-gateway get svc scg-operator -o jsonpath='{.status.loadBalancer.ingress[0].ip}')/openapi"

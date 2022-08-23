@@ -1,0 +1,1 @@
+web: export INITRD=No && export LANG=en_US.UTF-8 && export LOG_LEVEL=info && export PORT=8080 && gunicorn -b :8080 --threads 2 --log-level=DEBUG "searchservice:create_app()"
