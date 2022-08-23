@@ -10,6 +10,8 @@ metadata:
   name: frontend
 spec:
   env:
+  - name: NODE_ENV
+    value: production
   - name: "DANGEROUSLY_DISABLE_HOST_CHECK"
     value: true
   - name: "EUREKA_URI"
@@ -28,6 +30,8 @@ spec:
     env:
     - name: BP_NODE_RUN_SCRIPTS
       value: build
+    - name: NODE_ENV
+      value: production
     - name: "eqeqeq"
       value: "false"
   source:
