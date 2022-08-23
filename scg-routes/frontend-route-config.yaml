@@ -12,6 +12,4 @@ spec:
     filters:
       - StripPrefix=0
       - AddRequestHeader=Host,frontend
-    #uri: http://frontend-default.tap.yuga.ga
-    #uri: http://frontend-default.gkelabwest.tap.fynesy.com
-    #uri: http://frontend-default.gkelabcentral.tap.fynesy.com
+

@@ -20,7 +20,5 @@ spec:
       - StripPrefix=3
       - PrefixPath=/products-microservice/product
     uri: http://products-default.tap.yuga.ga
-    #uri: http://products-default.gkelabwest.tap.fynesy.com
-    #uri: http://products-default.gkelabcentral.tap.fynesy.com
 
 
