@@ -16,6 +16,10 @@ spec:
     value: "54.241.66.118"
   - name: "spring.datasource.url"
     value: "jdbc:postgresql://54.241.66.118:5433/yugabyte"
+  build:
+    env:
+    - name: BP_JVM_VERSION
+      value: "17"
   source:
     git:
       ref:
