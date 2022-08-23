@@ -15,8 +15,9 @@ metadata:
   tags:
     - microservice
     - react
+    - frontend
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=yugastore'
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=yugastore-frontend'
 spec:
   type: service
   lifecycle: alpha
@@ -26,13 +27,31 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: yugastore-api-gateway
-  description: Yugastore / API Gateway
+  name: yugastore-cart
+  description: Yugastore / Cart
   tags:
     - microservice
-    - api-gateway
+    - backend
+    - spring-boot
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=yugastore'
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=yugastore-cart'
+spec:
+  type: service
+  lifecycle: alpha
+  owner: guest
+  system: yugastore
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: yugastore-checkout
+  description: Yugastore / Checkout
+  tags:
+    - microservice
+    - backend
+    - spring-boot
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=yugastore-checkout'
 spec:
   type: service
   lifecycle: alpha
@@ -46,9 +65,27 @@ metadata:
   description: Yugastore / Frontend
   tags:
     - microservice
-    - spring
+    - backend
+    - spring-boot
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=yugastore'
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=yugastore-login'
+spec:
+  type: service
+  lifecycle: alpha
+  owner: guest
+  system: yugastore
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: yugastore-products
+  description: Yugastore / Products
+  tags:
+    - microservice
+    - backend
+    - spring-boot
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=yugastore-products'
 spec:
   type: service
   lifecycle: alpha

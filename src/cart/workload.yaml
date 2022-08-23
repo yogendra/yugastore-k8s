@@ -6,8 +6,8 @@ metadata:
     autoscaling.knative.dev/minScale: "1"
   labels:
     apps.tanzu.vmware.com/workload-type: web
-    app.kubernetes.io/part-of: yugastore
-  name: frontend
+    app.kubernetes.io/part-of: yugastore-cart
+  name: cart
 spec:
   env:
   - name: "EUREKA_URI"
@@ -25,4 +25,4 @@ spec:
       ref:
         branch: master
       url: https://github.com/yogendra/yugastore-k8s
-    subPath: "src/react-ui"
+    subPath: "src/cart"
