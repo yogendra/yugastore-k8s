@@ -10,4 +10,4 @@ spec:
       - Path=/checkout/**
     filters:
       - StripPrefix=1
-    uri: http://checkout-default.gkelabeast.tap.fynesy.com
+    uri: http://checkout-default.tap.yuga.ga

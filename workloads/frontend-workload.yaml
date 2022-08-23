@@ -11,19 +11,19 @@ metadata:
 spec:
   env:
   - name: "EUREKA_URI"
-    #value: "http://eureka-default.gkelabeast.tap.fynesy.com/eureka"
+    #value: "http://eureka-default.tap.yuga.ga/eureka"
     #value: "http://eureka-default.gkelabwest.tap.fynesy.com/eureka"
     value: "http://eureka-default.gkelabcentral.tap.fynesy.com/eureka"
   - name: "DB_HOSTNAME"
-    #value: "yb-tservers.yb-demo-us-east1-b.svc.cluster.local"
+    #value: "54.241.66.118"
     #value: "yb-tservers.yb-demo-us-west1-b.svc.cluster.local"
     value: "yb-tservers.yb-demo-us-central1-b.svc.cluster.local"
   - name: "spring.datasource.url"
-    #value: "jdbc:postgresql://yb-tservers.yb-demo-us-east1-b.svc.cluster.local:5433/yugabyte"
+    #value: "jdbc:postgresql://54.241.66.118:5433/yugabyte"
     #value: "jdbc:postgresql://yb-tservers.yb-demo-us-west1-b.svc.cluster.local:5433/yugabyte"
     value: "jdbc:postgresql://yb-tservers.yb-demo-us-central1-b.svc.cluster.local:5433/yugabyte"
-  build: 
-    env: 
+  build:
+    env:
     - name: BP_NODE_RUN_SCRIPTS
       value: build
     - name: "eqeqeq"
@@ -32,5 +32,5 @@ spec:
     git:
       ref:
         branch: master
-      url: https://github.com/tfynes-pivotal/yugastore-k8s
+      url: https://github.com/yogendra/yugastore-k8s
     subPath: "src/react-ui/frontend"

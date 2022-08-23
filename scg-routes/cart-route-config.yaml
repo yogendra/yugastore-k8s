@@ -14,7 +14,7 @@ spec:
       - PrefixPath=/cart-microservice/shoppingCart/productsInCart
       - AddRequestParameter=userid,u1001
       - AddRequestHeader=Host,cart
-    #uri: http://cart-default.gkelabeast.tap.fynesy.com
+    #uri: http://cart-default.tap.yuga.ga
 
   - predicates:
       - Path=/cart/add
@@ -24,7 +24,7 @@ spec:
       - PrefixPath=/cart-microservice/shoppingCart/addProduct
       - AddRequestParameter=userid,u1001
       - AddRequestHeader=Host,cart
-    #uri: http://cart-default.gkelabeast.tap.fynesy.com
+    #uri: http://cart-default.tap.yuga.ga
 
   - predicates:
       - Path=/cart/remove
@@ -34,8 +34,8 @@ spec:
       - PrefixPath=/cart-microservice/shoppingCart/removeProduct
       - AddRequestParameter=userid,u1001
       - AddRequestHeader=Host,cart
-    #uri: http://cart-default.gkelabeast.tap.fynesy.com
-  
+    #uri: http://cart-default.tap.yuga.ga
+
   - predicates:
       - Path=/cart/get
     order: 1
@@ -44,5 +44,5 @@ spec:
       - PrefixPath=/cart-microservice/shoppingCart/productsInCart
       - AddRequestParameter=userid,u1001
       - AddRequestHeader=Host,cart
-    #uri: http://cart-default.gkelabeast.tap.fynesy.com
+    #uri: http://cart-default.tap.yuga.ga
 

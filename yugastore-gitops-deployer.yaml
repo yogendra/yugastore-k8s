@@ -7,12 +7,12 @@ spec:
   serviceAccountName: gitops-service-account
   fetch:
   - git:
-      url: https://github.com/tfynes-pivotal/yugastore-k8s
+      url: https://github.com/yogendra/yugastore-k8s
       ref: origin/master
       subPath: workloads
   template:
   - ytt: {}
-  deploy: 
+  deploy:
   - kapp: {}
 
 ---
@@ -25,10 +25,10 @@ spec:
   serviceAccountName: gitops-service-account
   fetch:
   - git:
-      url: https://github.com/tfynes-pivotal/yugastore-k8s
+      url: https://github.com/yogendra/yugastore-k8s
       ref: origin/master
       subPath: scg-routes
   template:
   - ytt: {}
-  deploy: 
+  deploy:
   - kapp: {}
