@@ -23,12 +23,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": {
-    "/": {
-      "target": "http://localhost:8081",
-      "ws": true
-    }
-  },
+  "proxy": "http://yugastore.tap.yuga.ga",
   "engines": {
     "node": "^12"
   }
