@@ -1,0 +1,9 @@
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGatewayMapping
+metadata:
+  name: cart-gateway-mapping
+spec:
+  gatewayRef:
+    name: yugastore-gateway
+  routeConfigRef:
+    name: cart-gateway-route

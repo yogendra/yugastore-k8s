@@ -1,0 +1,93 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: yugastore
+  description: Yugastore on TAP
+spec:
+  owner: guest
+  domain: yugastore
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: yugastore-frontend
+  description: Yugastore / Frontend
+  tags:
+    - microservice
+    - react
+    - frontend
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=yugastore-frontend'
+spec:
+  type: service
+  lifecycle: alpha
+  owner: guest
+  system: yugastore
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: yugastore-cart
+  description: Yugastore / Cart
+  tags:
+    - microservice
+    - backend
+    - spring-boot
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=yugastore-cart'
+spec:
+  type: service
+  lifecycle: alpha
+  owner: guest
+  system: yugastore
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: yugastore-checkout
+  description: Yugastore / Checkout
+  tags:
+    - microservice
+    - backend
+    - spring-boot
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=yugastore-checkout'
+spec:
+  type: service
+  lifecycle: alpha
+  owner: guest
+  system: yugastore
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: yugastore-login
+  description: Yugastore / Login
+  tags:
+    - microservice
+    - backend
+    - spring-boot
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=yugastore-login'
+spec:
+  type: service
+  lifecycle: alpha
+  owner: guest
+  system: yugastore
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: yugastore-products
+  description: Yugastore / Products
+  tags:
+    - microservice
+    - backend
+    - spring-boot
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=yugastore-products'
+spec:
+  type: service
+  lifecycle: alpha
+  owner: guest
+  system: yugastore

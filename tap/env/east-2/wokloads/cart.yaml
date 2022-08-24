@@ -1,0 +1,28 @@
+---
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  annotations:
+    autoscaling.knative.dev/minScale: "1"
+  labels:
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/part-of: yugastore-cart
+  name: cart
+spec:
+  env:
+  - name: "EUREKA_URI"
+    value: "http://eureka-default.east-2.yuga.ga/eureka"
+  - name: "DB_HOSTNAME"
+    value: "54.241.66.118"
+  - name: "spring.datasource.url"
+    value: "jdbc:postgresql://54.241.66.118:5433/yugabyte"
+  build:
+    env:
+    - name: BP_JVM_VERSION
+      value: "17"
+  source:
+    git:
+      ref:
+        branch: master
+      url: https://github.com/yogendra/yugastore-k8s
+    subPath: "src/cart"

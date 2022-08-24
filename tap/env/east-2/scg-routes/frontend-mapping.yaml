@@ -1,0 +1,9 @@
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGatewayMapping
+metadata:
+  name: frontend-gateway-mapping
+spec:
+  gatewayRef:
+    name: yugastore-gateway
+  routeConfigRef:
+    name: frontend-gateway-route

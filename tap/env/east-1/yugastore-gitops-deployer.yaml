@@ -9,7 +9,7 @@ spec:
   - git:
       url: https://github.com/yogendra/yugastore-k8s
       ref: origin/master
-      subPath: workloads
+      subPath: tap/env/east-1/workloads
   template:
   - ytt: {}
   deploy:
@@ -27,7 +27,7 @@ spec:
   - git:
       url: https://github.com/yogendra/yugastore-k8s
       ref: origin/master
-      subPath: scg-routes
+      subPath: tap/env/east-1/scg-routes
   template:
   - ytt: {}
   deploy:

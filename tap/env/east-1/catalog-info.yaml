@@ -62,7 +62,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: yugastore-login
-  description: Yugastore / Frontend
+  description: Yugastore / Login
   tags:
     - microservice
     - backend

@@ -1,0 +1,22 @@
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGatewayRouteConfig
+metadata:
+  name: products-gateway-route
+spec:
+  service:
+    name: products
+  routes:
+  - predicates:
+      - Path=/products/**
+    order: 1
+    filters:
+      - StripPrefix=1
+      - PrefixPath=/products-microservice/products
+  - predicates:
+      - Path=/products/details/sku/**
+    order: 0
+    filters:
+      - StripPrefix=3
+      - PrefixPath=/products-microservice/product
+
+

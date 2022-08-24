@@ -1,0 +1,19 @@
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGatewayRouteConfig
+metadata:
+  name: checkout-gateway-route
+spec:
+  service:
+    name: checkout
+  routes:
+
+  - predicates:
+      - Path=/checkout
+    filters:
+      - StripPrefix=3
+      - PrefixPath=/checkout-microservice/shoppingCart/checkout
+  - predicates:
+      - Path=/checkout/**
+    filters:
+      - StripPrefix=3
+      - PrefixPath=/checkout-microservice/shoppingCart/checkout

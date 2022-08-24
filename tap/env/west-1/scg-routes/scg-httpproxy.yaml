@@ -9,6 +9,4 @@ spec:
     - name: yugastore-gateway
       port: 80
   virtualhost:
-    fqdn: yugastore.tap.yuga.ga
-    #fqdn: yugastore.gkelabwest.tap.fynesy.com
-    #fqdn: yugastore.gkelabcentral.tap.fynesy.com
+    fqdn: yugastore.west-1.yuga.ga

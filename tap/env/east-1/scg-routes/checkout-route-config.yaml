@@ -12,10 +12,8 @@ spec:
     filters:
       - StripPrefix=3
       - PrefixPath=/checkout-microservice/shoppingCart/checkout
-    uri: http://checkout-default.tap.yuga.ga
   - predicates:
       - Path=/checkout/**
     filters:
       - StripPrefix=3
       - PrefixPath=/checkout-microservice/shoppingCart/checkout
-    uri: http://checkout-default.tap.yuga.ga
