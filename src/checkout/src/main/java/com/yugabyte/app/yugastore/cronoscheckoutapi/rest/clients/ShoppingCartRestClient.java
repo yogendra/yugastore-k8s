@@ -6,7 +6,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient("cart-microservice")
+@FeignClient(value = "cart-microservice", url="http://cart-default.tap.yuga.ga")
 public interface ShoppingCartRestClient {
 
   @RequestMapping("/cart-microservice/shoppingCart/addProduct")
