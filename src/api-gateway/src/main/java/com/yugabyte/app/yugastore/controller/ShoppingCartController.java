@@ -30,7 +30,8 @@ public class ShoppingCartController {
 		this.checkoutServiceRest = checkoutServiceRest;
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/shoppingCart", produces = "application/json")
+  @RequestMapping(method = RequestMethod.GET, value = "/cart/get", produces = "application/json")
+
 	public @ResponseBody ResponseEntity<Map<String, Integer>> shoppingCart() {
 
 		String userId = "u1001";
@@ -42,7 +43,7 @@ public class ShoppingCartController {
 		return new ResponseEntity<Map<String, Integer>>(productsInCart, HttpStatus.OK);
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/shoppingCart/addProduct", produces = "application/json")
+	@RequestMapping(method = RequestMethod.POST, value = "/cart/add", produces = "application/json")
 	public ResponseEntity<?> addProductToCart(@RequestParam("sku") String sku) {
 		String userId = "u1001";
 		shoppingCartServiceRest.addProduct(userId, sku);
@@ -55,7 +56,7 @@ public class ShoppingCartController {
 
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/shoppingCart/removeProduct", produces = "application/json")
+	@RequestMapping(method = RequestMethod.POST, value = "/cart/remove", produces = "application/json")
 	public ResponseEntity<Map<String, Integer>> removeProductFromCart(@RequestParam("sku") String sku) {
 		String userId = "u1001";
 		shoppingCartServiceRest.removeProduct(userId, sku);
@@ -67,9 +68,9 @@ public class ShoppingCartController {
 		return new ResponseEntity<Map<String, Integer>>(productsInCart, HttpStatus.OK);
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/shoppingCart/checkout", produces = "application/json")
+	@RequestMapping(method = RequestMethod.POST, value = "/checkout", produces = "application/json")
 	public ResponseEntity<CheckoutStatus> checkout() {
-		
+
 		CheckoutStatus checkoutStatus = checkoutServiceRest.checkout();
 		return new ResponseEntity<CheckoutStatus>(checkoutStatus, HttpStatus.OK);
 	}

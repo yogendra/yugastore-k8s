@@ -24,12 +24,11 @@
   </properties>
 
   <modules>
-    <module>src/eureka-server-local</module>
-    <module>src/products</module>
-    <module>src/checkout</module>
-    <module>src/cart</module>
     <module>src/api-gateway</module>
+    <module>src/cart</module>
+    <module>src/checkout</module>
     <module>src/login</module>
+    <module>src/products</module>
   </modules>
 
   <build>

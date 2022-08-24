@@ -47,3 +47,6 @@ eureka:
       defaultZone: ${EUREKA_URI}
   instance:
     hostname: ${spring.application.name}
+security:
+  basic:
+    enabled: false

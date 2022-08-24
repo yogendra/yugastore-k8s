@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.yugabyte.app.yugastore.domain.CheckoutStatus;
 
-@FeignClient("checkout-microservice")
+@FeignClient(value="checkout-microservice", url="${client.checkout.baseUrl:http://localhost:8086}")
 public interface CheckoutRestClient {
 
   @RequestMapping(value = "/checkout-microservice/shoppingCart/checkout", method =
