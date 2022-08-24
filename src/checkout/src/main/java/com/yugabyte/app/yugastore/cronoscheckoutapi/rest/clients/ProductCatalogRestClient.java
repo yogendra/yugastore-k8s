@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.yugabyte.app.yugastore.cronoscheckoutapi.domain.ProductMetadata;
 import com.yugabyte.app.yugastore.cronoscheckoutapi.domain.ProductRanking;
 
-@FeignClient("products-microservice")
+@FeignClient(value="products-microservice", url="${client.products.baseUrl:http://localhost:8082}")
 
 public interface ProductCatalogRestClient {
 
