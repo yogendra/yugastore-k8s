@@ -9,4 +9,4 @@ spec:
     - name: yugastore-gateway
       port: 80
   virtualhost:
-    fqdn: yugastore.east-1.yuga.ga
+    fqdn: yugastore.tap.yuga.ga
