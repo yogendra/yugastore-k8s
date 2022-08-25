@@ -41,7 +41,7 @@ class Products extends Component {
     const limit = this.props.limit || 12 || nextLimit;
     const offset = this.props.offset || nextOffset || 0;
 
-    if ('Search' == nextCategory) {
+    if ('Search' === nextCategory) {
         url = '/search'; // must match ProductController @PostMapping
         let thePath = window.location.pathname;
         let search_term =  thePath.substring(thePath.lastIndexOf('/') + 1);

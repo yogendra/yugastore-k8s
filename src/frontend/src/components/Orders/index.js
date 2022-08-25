@@ -1,7 +1,5 @@
 //Dependencies
 import React, { Component } from 'react';
-import { Button } from '../../components/common';
-import { Link } from 'react-router-dom';
 //Internals
 import './index.css';
 
@@ -27,24 +25,21 @@ class Orders extends Component {
 
   costReducer = (accumulator, currentValue) => {
     const self = this;
-    return accumulator + currentValue.price * parseInt(self.props.cart.data[currentValue.id] || 0);
+    return accumulator + currentValue.price * parseInt(self.props.cart.data[currentValue.id] || 0, 10);
   }
 
   fetchOrderDetails() {
-      var url = '/orders';
+      let url = '/orders';
       console.log("Fetching url: " + url);
       fetch(url)
           .then(res => res.json())
           .then(product => {
-            this.setState({ product });
-            this.state.totalCount = product.ordercount;
+            this.setState({ product , totalCount: product.ordercount});
             console.log("@@@ACTEST:"+JSON.stringify(product));
             console.log("@@ACTEST this.state.totalCount:"+this.state.totalCount);
           });
   }
   render() {
-    const self = this;
-    const currentProduct = this.state.product;
     return(
       <div className="cart-container">
       <div className="container">

@@ -11,17 +11,19 @@ class ShowProduct extends Component {
   state = {product_id: "", product: undefined, productAlsoBought: []}
 
   componentDidMount() {
-    var new_product_id = this.props.match.params.id;
+    let new_product_id = this.props.match.params.id;
     this.fetchProductDetails(new_product_id)
   }
 
   fetchProductDetails = (new_product_id) => {
-    if (new_product_id != undefined &&
-        this.state.product_id != undefined &&
-        new_product_id != this.state.product_id) {
-      this.state.product_id = "" + new_product_id;
+    if (new_product_id !== undefined &&
+        this.state.product_id !== undefined &&
+        new_product_id !== this.state.product_id) {
+      this.setState({
+        product_id:  "" + new_product_id
+      })
       //var url = '/products/details?sku=' + new_product_id;
-      var url = '/products/details/sku/' + new_product_id;
+      let url = '/products/details/sku/' + new_product_id;
       console.log("Fetching url: " + url);
       fetch(url)
         .then(res => res.json())
@@ -54,7 +56,7 @@ class ShowProduct extends Component {
     this.fetchProductDetails(new_product_id)
     const currentProduct = this.state.product;
     if (!currentProduct) {
-      return ("");      
+      return ("");
     }
     var stars = ["star_border", "star_border", "star_border", "star_border", "star_border"];
     if (currentProduct.avg_stars > 0) {
@@ -117,7 +119,7 @@ class ShowProduct extends Component {
             </div>}
           </div>
         </div>
-        {Boolean(this.state.productAlsoBought.length) && 
+        {Boolean(this.state.productAlsoBought.length) &&
         <div className="content content-white">
           <div className="container">
           <div className="products">

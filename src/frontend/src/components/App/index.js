@@ -1,5 +1,4 @@
 // Dependencies
-import _ from 'lodash';
 import React, { Component } from 'react';
 // Externals
 import Cart from '../Cart';
@@ -8,7 +7,7 @@ import Products from '../Products';
 import Home from '../Home';
 import Orders from '../Orders';
 import { Navbar, Footer, Subscribe } from '../Main/components';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -41,7 +40,7 @@ export default class App extends Component {
          x: supportPageOffset ? window.pageXOffset : isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft,
          y: supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop
       };
-  
+
       if(scroll.y > 50 && !this.state.scrolled){
         this.setState({
           scrolled: true
@@ -88,13 +87,13 @@ export default class App extends Component {
   addItemToCart = (product) => {
     if (product) {
       console.log("Added to Cart "+product.title);
-      
+
       const self = this;
       const url = '/cart/add?sku='+(product.id.sku || product.id);
       let requestData = new FormData();
       requestData.append( "json", JSON.stringify( {sku: product.id} ));
 
-      fetch(url, {  
+      fetch(url, {
         method: 'POST',
         body: requestData,
         headers: {
@@ -115,7 +114,7 @@ export default class App extends Component {
           this.setState({
             cart: { ...this.state.cart, error: true }
           });
-    
+
           setTimeout(() => this.setState({
             cart: { ...this.state.cart, error: false }
           }), 2500);
@@ -128,13 +127,13 @@ export default class App extends Component {
   removeItemFromCart = (product) => {
     if (product) {
       console.log("Removed from Cart "+product.title);
-      
+
       const self = this;
       const url = '/cart/remove?sku='+product.id;
       let requestData = new FormData();
       requestData.append( "json", JSON.stringify( {sku: product.id} ));
 
-      fetch(url, {  
+      fetch(url, {
         method: 'POST',
         body: requestData,
         headers: {
@@ -147,7 +146,7 @@ export default class App extends Component {
             // const dataMerged = {};
             // const data = self.state.cart.data;
             // dataMerged[product.id.sku || product.id] = data[product.id.sku || product.id] ? data[product.id.sku || product.id] + 1 : 1;
-            
+
             self.setState({
               cart: {
                 data: data,
@@ -159,7 +158,7 @@ export default class App extends Component {
           this.setState({
             cart: { ...this.state.cart, error: true }
           });
-    
+
           setTimeout(() => this.setState({
             cart: { ...this.state.cart, error: false }
           }), 2500);
@@ -174,13 +173,13 @@ export default class App extends Component {
       <div>
         <Navbar cart={this.state.cart} scrolled={this.state.scrolled}/>
         <Switch>
-          <Route exact path="/" 
+          <Route exact path="/"
             render={(props) => (
               <Home
                 addItemToCart={this.addItemToCart} />
             )} />
-      
-          <Route path="/cart" 
+
+          <Route path="/cart"
             render={(props) => (
               <Cart
                 cart={this.state.cart} fetchCart={this.fetchCart} removeItemFromCart={this.removeItemFromCart}/>
@@ -190,7 +189,7 @@ export default class App extends Component {
                  render={(props) => (
                      <Orders />
           )} />
-      
+
           <Route path="/Search/:term"
             render={(props) => (
                <Products
@@ -228,14 +227,14 @@ export default class App extends Component {
                 {...props}
                 addItemToCart={this.addItemToCart} />
             )} />
-    
+
           <Route path="/sort/:query"
             render={(props) => (
               <Products
                 sort={props.match.params.query}
                 addItemToCart={this.addItemToCart} />
             )} />
-      
+
           <Route exact path="/item/:id" render={(props) => (
             <ShowProduct {...props} addItemToCart={this.addItemToCart}/>
           )}/>

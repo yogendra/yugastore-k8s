@@ -37,15 +37,15 @@ class CartProducts extends Component {
   }
 
   costReducer = (accumulator, currentValue) => {
-    const self = this;
-    return accumulator + currentValue.price * parseInt(self.props.cart.data[currentValue.id] || 0);
+
+    return accumulator + currentValue.price * parseInt(this.props.cart.data[currentValue.id] || 0,10);
   }
 
   fetchProductDetails(product_id) {
     if (!this.state.products.product_id) {
-      this.state.product_id = "" + product_id;
+      this.setState( { product_id: "" + product_id} );
       //var url = '/products/details?sku=' + product_id;
-      var url = '/products/details/sku/' + product_id;
+      let url = '/products/details/sku/' + product_id;
       console.log("Fetching url: " + url);
       fetch(url)
         .then(res => res.json())
@@ -56,7 +56,6 @@ class CartProducts extends Component {
     }
   }
   render() {
-    const self = this;
     const totalCost = this.state.products.length ? this.state.products.reduce(this.costReducer, 0) : 0;
     return(
       <div className="cart-container">

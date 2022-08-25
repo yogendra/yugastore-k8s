@@ -36,7 +36,7 @@ class Navbar extends Component {
   }
 
   render() {
-    const { match, location, history } = this.props
+    const { location } = this.props
     const notIndex = location.pathname!=="/";
 
     if (this.state.submitted) {
