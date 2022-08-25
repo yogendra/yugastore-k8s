@@ -20,10 +20,8 @@ spring:
     password: yugabyte
 logging:
   level:
-    root: debug
+    root: info
     org.hibernate.SQL: debug
-    org.hibernate.type: trace
-    org.hibernate.type.descriptor.BasicBinder: trace
 
 security:
   basic:
