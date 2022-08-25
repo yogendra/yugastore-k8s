@@ -1,0 +1,81 @@
+app:
+  services:
+    products:
+      uri: http://localhost:8082
+    cart:
+      uri: http://localhost:8083
+    checkout:
+      uri: http://localhost:8086
+    login:
+      uri: http://localhost:8085
+
+
+server:
+  port: 8081
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - uri: ${app.services.cart.uri}
+          predicates:
+            - Path=/cart/get/**
+          order: 9
+          filters:
+            - StripPrefix=1
+            - PrefixPath=/cart-microservice/shoppingCart/productsInCart
+            - AddRequestParameter=userid,u1001
+#            - AddRequestHeader=Host,cart
+        - uri: ${app.services.cart.uri}
+          predicates:
+            - Path=/cart/add
+          order: 0
+          filters:
+            - StripPrefix=2
+            - PrefixPath=/cart-microservice/shoppingCart/addProduct
+            - AddRequestParameter=userid,u1001
+#            - AddRequestHeader=Host,cart
+        - uri: ${app.services.cart.uri}
+          predicates:
+            - Path=/cart/remove
+          order: 0
+          filters:
+            - StripPrefix=2
+            - PrefixPath=/cart-microservice/shoppingCart/removeProduct
+            - AddRequestParameter=userid,u1001
+#            - AddRequestHeader=Host,cart
+        - uri: ${app.services.cart.uri}
+          predicates:
+            - Path=/cart/get
+          order: 1
+          filters:
+            - StripPrefix=2
+            - PrefixPath=/cart-microservice/shoppingCart/productsInCart
+            - AddRequestParameter=userid,u1001
+#            - AddRequestHeader=Host,cart
+        - uri: ${app.services.checkout.uri}
+          predicates:
+            - Path=/checkout
+          filters:
+            - StripPrefix=3
+            - PrefixPath=/checkout-microservice/shoppingCart/checkout
+        - uri: ${app.services.checkout.uri}
+          predicates:
+            - Path=/checkout/**
+          filters:
+            - StripPrefix=3
+            - PrefixPath=/checkout-microservice/shoppingCart/checkout
+        - uri: ${app.services.products.uri}
+          predicates:
+            - Path=/products/**
+          order: 1
+          filters:
+            - StripPrefix=1
+            - PrefixPath=/products-microservice/products
+        - uri: ${app.services.products.uri}
+          predicates:
+            - Path=/products/details/sku/**
+          order: 0
+          filters:
+            - StripPrefix=3
+            - PrefixPath=/products-microservice/product
