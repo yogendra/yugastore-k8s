@@ -25,6 +25,6 @@
   },
   "proxy": "http://localhost:8081/",
   "engines": {
-    "node": "^12"
+    "node": "^16"
   }
 }
