@@ -10,8 +10,6 @@ metadata:
   name: checkout
 spec:
   env:
-  - name: "EUREKA_URI"
-    value: "http://eureka-default.west-1.yuga.ga/eureka"
   - name: "DB_HOSTNAME"
     value: "54.241.66.118"
   - name: "spring.datasource.url"

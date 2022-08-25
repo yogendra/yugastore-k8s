@@ -9,15 +9,7 @@ metadata:
     app.kubernetes.io/part-of: yugastore-products
   name: products
 spec:
-#  serviceClaims:
-#  - name: db
-#    ref:
-#      apiVersion: services.apps.tanzu.vmware.com/v1alpha1
-#      kind: ResourceClaim
-#      name: east-yb-db
   env:
-  - name: "EUREKA_URI"
-    value: "http://eureka-default.west-1.yuga.ga/eureka"
   - name: "DB_HOSTNAME"
     value: "54.241.66.118"
   - name: "spring.datasource.url"
