@@ -36,7 +36,3 @@ logging:
     root: info
     org.springframework.web: info
     org.hibernate.SQL: debug
-
-security:
-  basic:
-    enabled: false
