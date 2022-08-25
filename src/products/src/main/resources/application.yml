@@ -33,20 +33,10 @@ server:
 
 logging:
   level:
-    root: debug
-    org.springframework.wen: info
+    root: info
+    org.springframework.web: info
     org.hibernate.SQL: debug
-    org.hibernate.type: trace
-    org.hibernate.type.descriptor.BasicBinder: trace
 
-eureka:
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: ${EUREKA_URI}
-  instance:
-    hostname: ${spring.application.name}
 security:
   basic:
     enabled: false
