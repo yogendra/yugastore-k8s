@@ -1,0 +1,8 @@
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGateway
+metadata:
+  name: yugastore-gateway
+spec:
+  api:
+    title: yugastore apis
+    version: 0.0.1

@@ -1,0 +1,44 @@
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGatewayRouteConfig
+metadata:
+  name: cart-gateway-route
+spec:
+  service:
+    name: cart
+  routes:
+  - predicates:
+      - Path=/cart/get/**
+    order: 9
+    filters:
+      - StripPrefix=1
+      - PrefixPath=/cart-microservice/shoppingCart/productsInCart
+      - AddRequestParameter=userid,u1001
+      - AddRequestHeader=Host,cart
+
+  - predicates:
+      - Path=/cart/add
+    order: 0
+    filters:
+      - StripPrefix=2
+      - PrefixPath=/cart-microservice/shoppingCart/addProduct
+      - AddRequestParameter=userid,u1001
+      - AddRequestHeader=Host,cart
+
+  - predicates:
+      - Path=/cart/remove
+    order: 0
+    filters:
+      - StripPrefix=2
+      - PrefixPath=/cart-microservice/shoppingCart/removeProduct
+      - AddRequestParameter=userid,u1001
+      - AddRequestHeader=Host,cart
+
+  - predicates:
+      - Path=/cart/get
+    order: 1
+    filters:
+      - StripPrefix=2
+      - PrefixPath=/cart-microservice/shoppingCart/productsInCart
+      - AddRequestParameter=userid,u1001
+      - AddRequestHeader=Host,cart
+

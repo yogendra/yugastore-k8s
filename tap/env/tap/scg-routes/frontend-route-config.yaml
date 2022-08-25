@@ -1,0 +1,15 @@
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGatewayRouteConfig
+metadata:
+  name: frontend-gateway-route
+spec:
+  service:
+    name: frontend
+  routes:
+  - order: 10
+    predicates:
+      - Path=/**
+    filters:
+      - StripPrefix=0
+      - AddRequestHeader=Host,frontend
+
