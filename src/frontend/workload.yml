@@ -35,6 +35,6 @@ spec:
   source:
     git:
       ref:
-        branch: master
+        branch: tap-ready
       url: https://github.com/yogendra/yugastore-k8s
     subPath: "src/react-ui/frontend"
