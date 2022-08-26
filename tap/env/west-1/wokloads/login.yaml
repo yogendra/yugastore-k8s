@@ -11,9 +11,9 @@ metadata:
 spec:
   env:
   - name: "DB_HOSTNAME"
-    value: "54.241.66.118"
+    value: "52.33.255.34"
   - name: "spring.datasource.url"
-    value: "jdbc:postgresql://54.241.66.118:5433/yugabyte"
+    value: "jdbc:postgresql://52.33.255.34:5433/yugabyte"
   build:
     env:
     - name: BP_JVM_VERSION
