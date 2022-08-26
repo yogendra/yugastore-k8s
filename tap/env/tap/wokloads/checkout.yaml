@@ -13,7 +13,7 @@ spec:
   - name: "DB_HOSTNAME"
     value: "54.241.66.118"
   - name: "spring.datasource.url"
-    value: "jdbc:postgresql:/x/54.241.66.118:5433/yugabyte"
+    value: "jdbc:postgresql://54.241.66.118:5433/yugabyte"
   - name: "CLIENT_PRODUCTS_BASEURL"
     value: "http://products-default.tap.yuga.ga"
   - name: "CLIENT_CART_BASEURL"
