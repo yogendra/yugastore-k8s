@@ -15,9 +15,9 @@ spec:
   - name: "spring.datasource.url"
     value: "jdbc:postgresql:/54.241.66.118:5433/yugabyte"
   - name: "CLIENT_PRODUCTS_BASEURL"
-    value: "http://products-default.east-2.yuga.ga"
+    value: "http://products"
   - name: "CLIENT_CART_BASEURL"
-    value: "http://cart-default.east-2.yuga.ga"
+    value: "http://cart"
   build:
     env:
     - name: BP_JVM_VERSION
