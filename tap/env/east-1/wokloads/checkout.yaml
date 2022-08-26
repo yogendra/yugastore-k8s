@@ -11,9 +11,9 @@ metadata:
 spec:
   env:
   - name: "DB_HOSTNAME"
-    value: "54.241.66.118"
+    value: "3.82.68.92"
   - name: "spring.datasource.url"
-    value: "jdbc:postgresql://54.241.66.118:5433/yugabyte"
+    value: "jdbc:postgresql://3.82.68.92:5433/yugabyte"
   - name: "CLIENT_PRODUCTS_BASEURL"
     value: "http://products"
   - name: "CLIENT_CART_BASEURL"
