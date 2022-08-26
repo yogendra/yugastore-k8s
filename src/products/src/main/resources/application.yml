@@ -31,13 +31,7 @@ server:
   port: 8082
   storenum: ${STORENUM:99}
 
-logging:
-  level:
-    root: debug
-    org.springframework.wen: info
-    org.hibernate.SQL: debug
-    org.hibernate.type: trace
-    org.hibernate.type.descriptor.BasicBinder: trace
+
 
 eureka:
   client:
