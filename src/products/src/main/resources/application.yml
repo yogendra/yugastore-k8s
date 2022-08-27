@@ -1,6 +1,4 @@
 spring:
-  profiles:
-    active: local
   application:
     name: products-microservice
     jpa:
@@ -18,7 +16,6 @@ spring:
     url: jdbc:postgresql://${DB_HOSTNAME:127.0.0.1}:5433/yugabyte
     username: yugabyte
     password: yugabyte
-
 server:
   port: 8082
   storenum: ${STORENUM:99}
@@ -26,7 +23,6 @@ server:
 logging:
   level:
     root: info
-
 security:
   basic:
     enabled: false
