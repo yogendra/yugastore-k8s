@@ -15,17 +15,9 @@ spring:
         repositories:
           enabled: true
   datasource:
-    hikari:
-      username: yugabyte
-      password: yugabyte
-      maximumPoolSize: 10
-      data-source-class-name: com.yugabyte.ysql.YBClusterAwareDataSource
-      data-source-properties:
-        serverName: ${DB_HOSTNAME:127.0.0.1}
-        portNumber: 5433
-        databaseName: yugabyte
-        additionalEndpoints:
-        topologyKeys:
+    url: jdbc:postgresql://${DB_HOSTNAME:127.0.0.1}:5433/yugabyte
+    username: yugabyte
+    password: yugabyte
 
 server:
   port: 8082
